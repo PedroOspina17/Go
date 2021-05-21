@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact me</title>
+</head>
+<body>
+    <a href="/index">Index</a>
+    <a href="/aboutUs">About us</a>
+    <a href="/contactMe">Contact me</a>
+
+    <div class="content">
+
+        <form action="/contactMe" method="post">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name">
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email">
+
+        <label for="phone">Phone</label>
+        <input type="tel" name="phone" id="phone">
+
+        <label for="reason">Reason</label>
+        <input type="text" name="reason" id="reason">
+
+        <input type="submit" name="save" value="send info" id="save">
+        </form>
+
+    </div>
+
+    {{if .Name}}
+
+        Mr. {{.Name}}, Thanks for contacting us. We are going to be in contact with you in the following email address: {{.Email}} or 
+        in the follwoing phone: {{.Phone}} to talk about the {{.Reason}}
+
+        Best regards,
+
+        XXX company
+    {{end}}
+</body>
+</html>
